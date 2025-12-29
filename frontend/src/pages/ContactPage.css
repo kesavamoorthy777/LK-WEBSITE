@@ -1,0 +1,244 @@
+.contact-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* Contact Methods Section */
+.contact-methods-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.contact-methods-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.contact-method-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.contact-method-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 32px rgba(0, 255, 209, 0.2);
+}
+
+.method-icon {
+  margin-bottom: 20px;
+}
+
+.contact-method-card h3 {
+  margin-bottom: 12px;
+}
+
+/* Quick Actions Section */
+.quick-actions-section {
+  padding: 80px 7.6923%;
+  background: linear-gradient(135deg, rgba(0, 255, 209, 0.05), rgba(10, 132, 255, 0.05));
+}
+
+.quick-actions-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quick-actions-container h2 {
+  margin-bottom: 40px;
+}
+
+.quick-actions-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  min-width: 200px;
+  padding: 18px 32px;
+  font-size: 18px;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.contact-form-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+
+/* Info Panel */
+.contact-info-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.info-header h2 {
+  color: var(--text-primary);
+}
+
+.gstin-info-badge {
+  background: rgba(0, 255, 209, 0.1);
+  border: 1px solid var(--brand-primary);
+  padding: 12px 20px;
+  display: inline-flex;
+  gap: 12px;
+  width: fit-content;
+}
+
+.gstin-info-badge .gstin-label {
+  color: var(--brand-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.gstin-info-badge .gstin-number {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.info-item h4 {
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.info-item a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+  color: var(--brand-primary);
+}
+
+.social-connect {
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--brand-primary);
+  color: #000000;
+  border-color: var(--brand-primary);
+  transform: translateY(-4px);
+}
+
+.contact-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.contact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.contact-image:hover .contact-img {
+  transform: scale(1.1);
+}
+
+/* Form Panel */
+.contact-form-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 50px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .contact-page {
+    padding-top: 70px;
+  }
+
+  .contact-methods-section,
+  .quick-actions-section,
+  .contact-form-section {
+    padding: 60px 20px;
+  }
+
+  .contact-form-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 30px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions-buttons {
+    flex-direction: column;
+  }
+
+  .btn-large {
+    width: 100%;
+  }
+}

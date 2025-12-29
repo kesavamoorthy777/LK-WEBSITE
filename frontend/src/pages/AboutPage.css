@@ -1,0 +1,339 @@
+.about-page {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* Story Section */
+.story-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.story-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story-text h2 {
+  margin-bottom: 30px;
+}
+
+.story-text p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.story-image {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.story-image:hover .story-img {
+  transform: scale(1.05);
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-secondary);
+}
+
+.mission-vision-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.mission-card,
+.vision-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  padding: 60px;
+  transition: all 0.4s ease-in-out;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-primary);
+  box-shadow: 0 8px 32px rgba(0, 255, 209, 0.2);
+}
+
+.mv-icon {
+  margin-bottom: 24px;
+}
+
+.mission-card h2,
+.vision-card h2 {
+  margin-bottom: 20px;
+}
+
+.mission-card p,
+.vision-card p {
+  color: var(--text-secondary);
+}
+
+/* Values Section */
+.values-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.values-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.value-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
+  transition: all 0.4s ease-in-out;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-orange);
+  box-shadow: 0 8px 32px rgba(255, 95, 31, 0.2);
+}
+
+.value-icon {
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  margin-bottom: 16px;
+}
+
+.value-card p {
+  color: var(--text-secondary);
+}
+
+/* Expertise Section */
+.expertise-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-secondary);
+}
+
+.expertise-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.expertise-container h2 {
+  margin-bottom: 60px;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.expertise-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.expertise-item:hover {
+  border-color: var(--brand-orange);
+  transform: translateX(8px);
+}
+
+.expertise-item span {
+  color: var(--text-primary);
+}
+
+.expertise-highlight {
+  background: rgba(0, 255, 209, 0.05);
+  border: 1px solid var(--brand-primary);
+  padding: 40px;
+  text-align: center;
+}
+
+.expertise-highlight h3 {
+  margin-bottom: 20px;
+  color: var(--brand-primary);
+}
+
+.expertise-highlight p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Customers Section */
+.about-customers-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-primary);
+}
+
+.about-customers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-customers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.about-customer-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.about-customer-card:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-4px);
+}
+
+.about-customer-card p {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Commitment Section */
+.commitment-section {
+  padding: 100px 7.6923%;
+  background: var(--bg-secondary);
+}
+
+.commitment-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.commitment-content h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.commitment-points {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.commitment-point {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 30px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.4s ease-in-out;
+}
+
+.commitment-point:hover {
+  border-color: var(--brand-primary);
+  transform: translateX(8px);
+}
+
+.commitment-point h3 {
+  margin-bottom: 8px;
+}
+
+.commitment-point p {
+  color: var(--text-secondary);
+}
+
+.gstin-commitment-badge {
+  background: rgba(0, 255, 209, 0.1);
+  border: 1px solid var(--brand-primary);
+  padding: 16px 32px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.gstin-commitment-badge .gstin-label {
+  color: var(--brand-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.gstin-commitment-badge .gstin-number {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 70px;
+  }
+
+  .story-section,
+  .mission-vision-section,
+  .values-section,
+  .expertise-section,
+  .about-customers-section,
+  .commitment-section {
+    padding: 60px 20px;
+  }
+
+  .story-content,
+  .mission-vision-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-image {
+    height: 350px;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 40px;
+  }
+
+  .expertise-grid,
+  .about-customers-grid {
+    grid-template-columns: 1fr;
+  }
+}

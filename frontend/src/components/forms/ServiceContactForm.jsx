@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { Send, Phone, Mail, MessageCircle } from 'lucide-react';
-
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+import { Send } from 'lucide-react';
 
 export const ServiceContactForm = ({ type = 'contact' }) => {
     const [formData, setFormData] = useState({
@@ -15,6 +12,12 @@ export const ServiceContactForm = ({ type = 'contact' }) => {
     });
     const [status, setStatus] = useState({ loading: false, error: null, success: false });
 
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    };
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -24,8 +27,17 @@ export const ServiceContactForm = ({ type = 'contact' }) => {
         setStatus({ loading: true, error: null, success: false });
 
         try {
-            const endpoint = type === 'service' ? '/service-request' : '/contact';
-            await axios.post(`${API_BASE_URL}${endpoint}`, formData);
+            const formName = type === 'service' ? 'service-request' : 'contact-message';
+
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({
+                    "form-name": formName,
+                    ...formData
+                })
+            });
+
             setStatus({ loading: false, error: null, success: true });
             setFormData({ name: '', email: '', phone: '', subject: '', service: '', message: '' });
         } catch (err) {
@@ -33,6 +45,8 @@ export const ServiceContactForm = ({ type = 'contact' }) => {
             setStatus({ loading: false, error: 'Failed to send message. Please try again.', success: false });
         }
     };
+
+    const formName = type === 'service' ? 'service-request' : 'contact-message';
 
     return (
         <div className="contact-form-wrapper">
@@ -45,7 +59,15 @@ export const ServiceContactForm = ({ type = 'contact' }) => {
                     </button>
                 </div>
             ) : (
-                <form onSubmit={handleSubmit} className="contact-form">
+                <form
+                    onSubmit={handleSubmit}
+                    className="contact-form"
+                    name={formName}
+                    data-netlify="true"
+                >
+                    {/* Hidden input for Netlify */}
+                    <input type="hidden" name="form-name" value={formName} />
+
                     <div className="form-group">
                         <label htmlFor="name" className="body-medium">Full Name *</label>
                         <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="form-input" placeholder="Your name" />
@@ -100,3 +122,4 @@ export const ServiceContactForm = ({ type = 'contact' }) => {
         </div>
     );
 };
+

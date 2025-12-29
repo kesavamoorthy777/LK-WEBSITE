@@ -2,71 +2,50 @@
 
 A modern portfolio website for LK Technical Services - Complete CNC Machine Support.
 
-## Quick Start
+## Features
+- **Dynamic Forms:** Powered by Netlify Forms (No backend required)
+- **Responsive Design:** Premium UI for all devices
+- **SEO Optimized:** Ready for search engines
+
+## Hosting Instructions (Netlify)
+
+This website is optimized to be hosted on **Netlify** without needing a separate backend or database.
+
+### 1. Connect to Netlify
+1. Log in to [Netlify](https://www.netlify.com/).
+2. Click **Add new site** > **Import an existing project**.
+3. Connect your **GitHub** account and select this repository.
+
+### 2. Configure Build Settings
+Netlify should automatically detect the settings, but if not, use these:
+- **Base directory:** `frontend`
+- **Build command:** `npm run build`
+- **Publish directory:** `build`
+
+### 3. Forms
+- Form submissions will automatically appear in your **Netlify Dashboard** under the **Forms** tab.
+- You can enable email notifications in the Netlify settings to get an email every time someone contacts you.
+
+## Local Development
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- Python 3.11+
-- MongoDB (optional - only needed if you want to save form submissions)
 
-### Running the Website
-
-#### Option 1: Frontend Only (Recommended for viewing)
+### Steps
 1. Open a terminal in the `frontend` folder
-2. Run: `npm start`
-3. The website will open at http://localhost:3000
+2. Run: `npm install`
+3. Run: `npm start`
+4. The website will open at http://localhost:3000
 
-**Note:** Forms won't save to database without the backend, but you can still view the entire website.
-
-#### Option 2: Full Stack (Frontend + Backend)
-
-**Terminal 1 - Frontend:**
-```bash
-cd frontend
-npm start
-```
-
-**Terminal 2 - Backend (optional):**
-```bash
-cd backend
-python -m uvicorn server:app --reload
-```
-
-## Project Structure
-
-```
-website/
-├── frontend/          # React application
-│   ├── src/
-│   │   ├── components/   # Reusable components
-│   │   ├── pages/        # Page components
-│   │   └── App.js        # Main app
-│   └── package.json
-│
-└── backend/           # Python FastAPI server (optional)
-    ├── server.py      # API endpoints
-    └── requirements.txt
-```
+---
 
 ## Customization
 
 To update company information:
-1. Edit contact details in `frontend/src/components/Footer.jsx`
+1. Edit contact details in `frontend/src/components/sections/Footer.jsx`
 2. Update GSTIN number in each page's hero section
 3. Modify services list in `frontend/src/pages/ServicesPage.jsx`
 
-## Troubleshooting
-
-**If `npm start` doesn't work:**
-- Make sure you're in the `frontend` folder
-- Try: `npm install --legacy-peer-deps` first
-- Then: `npm start`
-
-**Forms not working:**
-- This is normal if backend isn't running
-- Forms will show in the UI but won't save data
-- To enable saving, start the backend server
-
 ## Support
 
-For issues or questions, check the code comments or reach out to your development team.
+For issues or questions, reach out to your development team.
